@@ -1,0 +1,10 @@
+    private mutating func onSale(_ gestureState: GestureType.GestureState<CGFloat>,
+                                 in state: AppState) -> AppState {
+        
+        var newState = state
+        switch state.editMode {
+        case .preview:
+            newState.collage = elementsTransformer.scale(
+                gestureState,
+                in: state.collage
+            )
